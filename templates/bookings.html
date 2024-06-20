@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookings
+{% endblock %}
+
+{% block main %}
+<div class="card" style="text-align: left">
+    <div class="card-header" id="text-start">
+        Bookings - {{user}}
+        <a href="/makebooking" class="btn btn-primary">Register Booking</a>
+    </div>
+    <div class="card-body">
+        {%for booking in bookings%}
+        <p class="fw-bold" style='margin: 0'>{{booking.type}}</p>
+        <h5 class="card-title">{{booking.date}}</h5>
+        <hr>
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock %}
